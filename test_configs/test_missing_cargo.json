@@ -1,0 +1,7 @@
+{
+  "package_name": "nonexistent",
+  "repository_url_or_path": "https://github.com/example/nonexistent.git",
+  "repository_mode": "download",
+  "package_version": "1.0.0",
+  "max_depth": 3
+}

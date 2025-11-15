@@ -1,0 +1,7 @@
+{
+  "package_name": "serde",
+  "repository_url_or_path": "ftp://invalid",
+  "repository_mode": "download",
+  "package_version": "1.0.0",
+  "max_depth": 3
+}

@@ -285,4 +285,72 @@ serde_json -> serde = "1.0"
 - Реализован BFS-обход с ограничением по `max_depth`.
 - Граф хранится как список кортежей `(parent, dependency, version)` и выводится в человекочитаемом виде.
 
+Конечно! Вот оформленное описание **Этапа 4: Вывод обратных зависимостей** в едином стиле с предыдущими этапами и готовое к включению в ваш `README.md`:
+
+---
+
+## Этап 4: Вывод обратных зависимостей
+
+### Цель
+Добавить анализ и вывод **обратных зависимостей** для каждого пакета в графе зависимостей, построенном на Этапе 3.
+
+### Требования
+1. Для каждого пакета из графа определить и вывести пакеты, которые **от него зависят**.
+2. Использовать существующий граф зависимостей без повторной загрузки репозиториев.
+3. Вывести **прямые** и **обратные** зависимости в человекочитаемом текстовом формате.
+4. Результат сохранён в Git.
+
+
+### Пример конфигурации
+
+#### Валидный `config.json`
+```json
+{
+  "package_name": "serde_json",
+  "repository_url_or_path": "https://github.com/serde-rs/json.git",
+  "repository_mode": "download",
+  "package_version": "1.0.99",
+  "max_depth": 3,
+  "test_mode": false
+}
+```
+
+**<img width="1015" height="883" alt="image" src="https://github.com/user-attachments/assets/30f2fe1b-e614-4f98-a400-67aca3f8f576" />
+**
+```
+Configuration:
+package_name: serde_json
+repository_url_or_path: https://github.com/serde-rs/json.git
+repository_mode: download
+package_version: 1.0.99
+max_depth: 3
+test_mode: false
+
+Cloning repository...
+Checking out version 1.0.99...
+
+Dependency Graph (Forward):
+serde_json -> itoa = 1.0
+serde_json -> ryu = 1.0
+
+Reverse Dependency Graph:
+itoa <- serde_json
+ryu <- serde_json
+```
+
+> Обратные зависимости строятся **инвертированием рёбер** из прямого графа. Например, если `A -> B`, то в обратном графе: `B <- A`.
+
+### Тестирование
+
+
+- **Успешный случай (тестовый режим)**: Установи `"test_mode": true` и используй mock-граф, например с зависимостью `X -> A`.  
+  **<img width="1233" height="1122" alt="image" src="https://github.com/user-attachments/assets/df761793-189c-43d6-9354-f0928bffb885" />
+**  
+
+
+### Реализация
+- На основе графа, построенного на Этапе 3 (список рёбер вида `(parent, child, version)`), строится инвертированный граф.
+- Каждое ребро `A -> B` преобразуется в запись `B <- A` для вывода.
+- Весь вывод разделён на две секции: **Forward** и **Reverse**, для наглядного сравнения.
+
 

@@ -91,3 +91,116 @@ max_depth: 3
 | `test_negative_depth.json` | Отрицательная глубина | `<img width="1284" height="232" alt="image" src="https://github.com/user-attachments/assets/92aaec7b-ff79-43b3-8594-fa14e291711a" />
 ` |
 
+Конечно! Ниже приведено обновлённое содержимое `README.md`, включающее описание **Этапа 2: Сбор данных**. Оно оформлено в стиле, совместимом с предыдущим этапом, и готово к использованию в вашем Git-репозитории.
+
+```markdown
+# Инструмент визуализации графа зависимостей
+
+Этот проект представляет собой инструмент для анализа и визуализации графа зависимостей пакетов, разработанный в рамках учебного задания. Инструмент реализуется поэтапно с использованием Python, избегая готовых менеджеров пакетов и библиотек для получения зависимостей. Все этапы сохраняются в Git-репозитории.
+
+## Этап 1: Минимальный прототип с конфигурацией
+
+*(Описание Этапа 1 см. в предыдущих коммитах или в истории README.)*
+
+---
+
+Конечно! Вот обновлённое описание **Этапа 2: Сбор данных** в стиле, полностью соответствующем вашему формату и содержанию:
+
+---
+
+## Этап 2: Сбор данных
+
+### Цель
+Реализовать основную логику получения данных о зависимостях для их дальнейшего анализа и визуализации.
+
+### Требования
+1. Использовать формат пакетов Rust (Cargo).
+2. Информацию получить для заданной пользователем версии пакета.
+3. Извлечь информацию о прямых зависимостях заданного пакета, используя URL-адрес репозитория.
+4. Вывести на экран все прямые зависимости (только для этого этапа).
+5. Результат сохранён в Git.
+
+### Пример конфигурации
+
+#### Валидный `config.json`
+```json
+{
+  "package_name": "serde_json",
+  "repository_url_or_path": "https://github.com/serde-rs/json.git",
+  "repository_mode": "download",
+  "package_version": "1.0.0",
+  "max_depth": 3
+}
+```
+
+**<img width="1228" height="754" alt="image" src="https://github.com/user-attachments/assets/e15ae8bd-0c16-48eb-bb4d-386e3b81fed6" />
+**
+```
+Configuration:
+package_name: serde_json
+repository_url_or_path: https://github.com/serde-rs/json.git
+repository_mode: download
+package_version: 1.0.0
+max_depth: 3
+
+Cloning repository...
+Checking out version 1.0.0...
+
+Direct dependencies:
+dtoa = "0.4"
+num-traits = "0.1.32"
+serde = "1.0"
+```
+
+> Вывод основан на содержимом файла `Cargo.toml` в репозитории `serde-rs/json` на теге `1.0.0`.
+
+### Тестирование
+
+- **Успешный случай**:репозиторий `serde-json` с версией `1.0.99`.  
+  **Вывод:**  
+  `<img width="1226" height="720" alt="image" src="https://github.com/user-attachments/assets/3bb581a4-5a02-4c44-b49e-fb12e081ffa5" />
+`
+
+- **Ошибка: Отсутствие тега версии**  
+  Конфиг:
+  ```json
+  { "package_version": "999.0.0", ... }
+  ```  
+  **Вывод:**  
+  `<img width="1221" height="600" alt="image" src="https://github.com/user-attachments/assets/51eaf95d-244c-40ee-b60f-834384ef2a44" />
+`
+
+- **Ошибка: Отсутствие Cargo.toml**  
+  Используется репозиторий без `Cargo.toml` в корне указанной версии.  
+  **Вывод:**  
+  `<img width="1248" height="459" alt="image" src="https://github.com/user-attachments/assets/ee408bf7-4eda-473f-88e4-7aee9fa70491" />
+`
+
+- **Ошибка: Неверный URL**  
+  Конфиг:
+  ```json
+  { "repository_url_or_path": "https://invalid.git", ... }
+  ```  
+  **Вывод:**  
+  `<img width="1547" height="458" alt="image" src="https://github.com/user-attachments/assets/da10f397-4ff1-44c7-b360-42143613c84e" />
+`
+
+- **Ошибка: Неверный режим**  
+  Конфиг:
+  ```json
+  { "repository_mode": "local", ... }
+  ```  
+  **Вывод:**  
+  `<img width="1238" height="208" alt="image" src="https://github.com/user-attachments/assets/eadd0615-2f87-4ef1-a734-f611b6726b40" />
+`
+
+- **Ошибка: Неверное имя пакета**  
+  Конфиг:
+  ```json
+  { "package_name": "серде_json", ... }
+  ```  
+  **Вывод:**  
+  `<img width="1431" height="193" alt="image" src="https://github.com/user-attachments/assets/b05e751a-cb34-41d6-b6ef-d173c6af3732" />
+`
+
+

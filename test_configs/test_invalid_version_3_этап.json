@@ -1,0 +1,8 @@
+{
+  "package_name": "serde_json",
+  "repository_url_or_path": "https://github.com/serde-rs/json.git",
+  "repository_mode": "download",
+  "package_version": "999.0.0",
+  "max_depth": 3,
+  "test_mode": false
+}

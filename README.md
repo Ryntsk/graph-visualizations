@@ -158,8 +158,8 @@ serde = "1.0"
 
 - **Успешный случай**:репозиторий `serde-json` с версией `1.0.99`.  
   **Вывод:**  
-  `<img width="1226" height="720" alt="image" src="https://github.com/user-attachments/assets/3bb581a4-5a02-4c44-b49e-fb12e081ffa5" />
-`
+  <img width="1226" height="720" alt="image" src="https://github.com/user-attachments/assets/3bb581a4-5a02-4c44-b49e-fb12e081ffa5" />
+
 
 - **Ошибка: Отсутствие тега версии**  
   Конфиг:
@@ -167,14 +167,14 @@ serde = "1.0"
   { "package_version": "999.0.0", ... }
   ```  
   **Вывод:**  
-  `<img width="1221" height="600" alt="image" src="https://github.com/user-attachments/assets/51eaf95d-244c-40ee-b60f-834384ef2a44" />
-`
+  <img width="1221" height="600" alt="image" src="https://github.com/user-attachments/assets/51eaf95d-244c-40ee-b60f-834384ef2a44" />
+
 
 - **Ошибка: Отсутствие Cargo.toml**  
   Используется репозиторий без `Cargo.toml` в корне указанной версии.  
   **Вывод:**  
-  `<img width="1248" height="459" alt="image" src="https://github.com/user-attachments/assets/ee408bf7-4eda-473f-88e4-7aee9fa70491" />
-`
+  <img width="1248" height="459" alt="image" src="https://github.com/user-attachments/assets/ee408bf7-4eda-473f-88e4-7aee9fa70491" />
+
 
 - **Ошибка: Неверный URL**  
   Конфиг:
@@ -182,8 +182,8 @@ serde = "1.0"
   { "repository_url_or_path": "https://invalid.git", ... }
   ```  
   **Вывод:**  
-  `<img width="1547" height="458" alt="image" src="https://github.com/user-attachments/assets/da10f397-4ff1-44c7-b360-42143613c84e" />
-`
+  <img width="1547" height="458" alt="image" src="https://github.com/user-attachments/assets/da10f397-4ff1-44c7-b360-42143613c84e" />
+
 
 - **Ошибка: Неверный режим**  
   Конфиг:
@@ -191,8 +191,8 @@ serde = "1.0"
   { "repository_mode": "local", ... }
   ```  
   **Вывод:**  
-  `<img width="1238" height="208" alt="image" src="https://github.com/user-attachments/assets/eadd0615-2f87-4ef1-a734-f611b6726b40" />
-`
+  <img width="1238" height="208" alt="image" src="https://github.com/user-attachments/assets/eadd0615-2f87-4ef1-a734-f611b6726b40" />
+
 
 - **Ошибка: Неверное имя пакета**  
   Конфиг:
@@ -200,7 +200,7 @@ serde = "1.0"
   { "package_name": "серде_json", ... }
   ```  
   **Вывод:**  
-  `<img width="1431" height="193" alt="image" src="https://github.com/user-attachments/assets/b05e751a-cb34-41d6-b6ef-d173c6af3732" />
-`
+  <img width="1431" height="193" alt="image" src="https://github.com/user-attachments/assets/b05e751a-cb34-41d6-b6ef-d173c6af3732" />
+
 
 

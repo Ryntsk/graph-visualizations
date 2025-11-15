@@ -1,0 +1,7 @@
+{
+  "package_name": "serde",
+  "repository_url_or_path": "https://github.com/serde-rs/serde.git",
+  "repository_mode": "download",
+  "package_version": "1.0",
+  "max_depth": 3
+}

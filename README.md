@@ -72,7 +72,7 @@ max_depth: 3
 
 Для демонстрации обработки ошибок созданы тестовые конфигурации в папке `test_configs`.
 
-| Файл | Описание | Ожидаемая ошибка |
+| Файл | Описание | Ошибка |
 |------|----------|------------------|
 | `test_invalid_json.json` | Некорректный JSON | `<img width="1230" height="217" alt="image" src="https://github.com/user-attachments/assets/5c31bc6d-7026-4df0-92bb-8d541531a23d" />
 ` |

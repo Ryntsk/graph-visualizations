@@ -1,0 +1,7 @@
+{
+  "package_name": "serde",
+  "repository_url_or_path": "/nonexistent",
+  "repository_mode": "local",
+  "package_version": "1.0.0",
+  "max_depth": 3
+}

@@ -1,0 +1,8 @@
+
+{
+  "package_name": "serde_json",
+  "repository_url_or_path": "https://invalid-url.git",
+  "repository_mode": "download",
+  "package_version": "1.0.0",
+  "max_depth": 3
+}
